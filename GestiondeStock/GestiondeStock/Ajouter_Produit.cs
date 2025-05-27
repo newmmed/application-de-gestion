@@ -295,5 +295,10 @@ namespace GestiondeStock
                 txtnum.ForeColor = Color.Silver;
             }
         }
+
+        private void Ajouter_Produit_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

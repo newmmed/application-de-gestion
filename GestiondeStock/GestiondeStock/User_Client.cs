@@ -26,11 +26,13 @@ namespace GestiondeStock
                 }
                 return Userclient;
             }
+           
         }
 
         public User_Client()
         {
             InitializeComponent();
+            this.Load += UserAlert_Load;
         }
         //ajouter dans dataGridView
 
@@ -83,18 +85,42 @@ namespace GestiondeStock
 
         private void btnimporter_Click(object sender, EventArgs e)
         {
-            SqlConnection cnx = new SqlConnection("Server=DESKTOP-HBV0SC5\\GSTR2_SERVER;Database=gestion_de_stock;Integrated Security=True;");
-            string sql = "SELECT * FROM Client";
-            SqlCommand cmd = new SqlCommand(sql, cnx);
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+        //    SqlConnection cnx = new SqlConnection("Server=DESKTOP-HBV0SC5\\GSTR2_SERVER;Database=gestion_de_stock;Integrated Security=True;");
+        //    string sql = "SELECT * FROM Client";
+        //    SqlCommand cmd = new SqlCommand(sql, cnx);
+        //    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    dataGridView1.DataSource = table;
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        private void LoadData()
+        {
+            string connectionString = "Server=DESKTOP-HBV0SC5\\GSTR2_SERVER;Database=gestion_de_stock;Integrated Security=True;";
+            string query = "SELECT * FROM Client";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors du chargement des Client : " + ex.Message);
+            }
+        }
+        private void UserAlert_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

@@ -21,5 +21,19 @@ namespace GestiondeStock
         {
 
         }
+
+        private void btndéconnecter_Click(object sender, EventArgs e)
+        {
+            Form parentForm = this.FindForm();
+
+            if (parentForm != null)
+            {
+                parentForm.Hide();
+
+                Connexion connexionForm = new Connexion();
+                connexionForm.FormClosed += (s, args) => parentForm.Close();
+                connexionForm.Show();
+            }
+        }
     }
 }

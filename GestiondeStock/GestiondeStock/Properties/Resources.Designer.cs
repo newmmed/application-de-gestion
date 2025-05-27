@@ -63,6 +63,16 @@ namespace GestiondeStock.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alert_stamp_3 {
+            get {
+                object obj = ResourceManager.GetObject("alert-stamp-3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login_32 {
             get {
                 object obj = ResourceManager.GetObject("login_32", resourceCulture);

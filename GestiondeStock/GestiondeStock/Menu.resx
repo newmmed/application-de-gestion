@@ -129,7 +129,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAKVFJREFUeF7t3QmUbVdZJ/BNwmAIMgkEAWXJICiiImIrtAoNBnDusNCFYmOQpRJt
+        DQAACw0B7QfALAAAKVFJREFUeF7t3QmUbVdZJ/BNwmAIMgkEAWXJICiiImIrtAoNBnDusNCFYmOQpRJt
         FNphAYqiggMRGxVaWg3EbolG0y3QtBqwwyARzeskVal6ZiAmaDOIIQkEEzL3t83HojxskjdU7X3Ovb/f
         Wv/1wpBX3zlnf3vve+vecwoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC3OKeUu59X
@@ -312,7 +312,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>721, 21</value>
+    <value>957, 20</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 33</value>
@@ -348,7 +348,7 @@
     <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>699, 13</value>
+    <value>935, 12</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 47</value>
@@ -453,7 +453,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnclient.Location" type="System.Drawing.Point, System.Drawing">
-    <value>188, 16</value>
+    <value>424, 15</value>
   </data>
   <data name="btnclient.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 38</value>
@@ -576,7 +576,7 @@
     <value>NoControl</value>
   </data>
   <data name="btncommande.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 12</value>
+    <value>589, 11</value>
   </data>
   <data name="btncommande.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 46</value>
@@ -668,7 +668,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnutilisateur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 12</value>
+    <value>239, 11</value>
   </data>
   <data name="btnutilisateur.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 47</value>
@@ -769,7 +769,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnproduit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>539, 11</value>
+    <value>775, 10</value>
   </data>
   <data name="btnproduit.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 47</value>

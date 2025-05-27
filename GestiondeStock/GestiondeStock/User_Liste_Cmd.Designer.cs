@@ -101,7 +101,7 @@
             this.btnsupprimer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnsupprimer.Image = ((System.Drawing.Image)(resources.GetObject("btnsupprimer.Image")));
             this.btnsupprimer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsupprimer.Location = new System.Drawing.Point(560, 61);
+            this.btnsupprimer.Location = new System.Drawing.Point(706, 61);
             this.btnsupprimer.Name = "btnsupprimer";
             this.btnsupprimer.Size = new System.Drawing.Size(236, 51);
             this.btnsupprimer.TabIndex = 2;
@@ -119,7 +119,7 @@
             this.btnmodifierclient.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnmodifierclient.Image = ((System.Drawing.Image)(resources.GetObject("btnmodifierclient.Image")));
             this.btnmodifierclient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnmodifierclient.Location = new System.Drawing.Point(299, 61);
+            this.btnmodifierclient.Location = new System.Drawing.Point(436, 61);
             this.btnmodifierclient.Name = "btnmodifierclient";
             this.btnmodifierclient.Size = new System.Drawing.Size(236, 51);
             this.btnmodifierclient.TabIndex = 1;
@@ -137,7 +137,7 @@
             this.btnajouterclient.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnajouterclient.Image = ((System.Drawing.Image)(resources.GetObject("btnajouterclient.Image")));
             this.btnajouterclient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnajouterclient.Location = new System.Drawing.Point(33, 61);
+            this.btnajouterclient.Location = new System.Drawing.Point(153, 61);
             this.btnajouterclient.Name = "btnajouterclient";
             this.btnajouterclient.Size = new System.Drawing.Size(236, 51);
             this.btnajouterclient.TabIndex = 0;
@@ -160,7 +160,7 @@
             this.Controls.Add(this.btnajouterclient);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "User_Liste_Cmd";
-            this.Size = new System.Drawing.Size(823, 389);
+            this.Size = new System.Drawing.Size(1230, 542);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

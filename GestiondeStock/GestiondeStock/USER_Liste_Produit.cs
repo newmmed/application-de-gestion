@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -30,7 +31,7 @@ namespace GestiondeStock
         private void btnimporter_Click(object sender, EventArgs e)
         {
             SqlConnection cnx = new SqlConnection("Server=DESKTOP-HBV0SC5\\GSTR2_SERVER;Database=gestion_de_stock;Integrated Security=True;");
-            string sql = "SELECT * FROM Produit";
+            string sql = "SELECT Id_produit, Nom_produit, Quantité_produit, Prix_produit, ID_Categorie FROM Produit";
             SqlCommand cmd = new SqlCommand(sql, cnx);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
@@ -105,6 +106,106 @@ namespace GestiondeStock
         private void dvgProduit_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnimprimertout_Click(object sender, EventArgs e)
+        {
+            // Check if there's any data to print
+            if (dvgProduit.Rows.Count == 0)
+            {
+                MessageBox.Show("Aucune donnée à imprimer.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Create a PrintDocument
+            PrintDocument printDoc = new PrintDocument();
+            printDoc.DocumentName = "Liste des Produits";
+            printDoc.PrintPage += new PrintPageEventHandler(PrintPageHandler);
+
+            // Show print dialog
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = printDoc;
+
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                printDoc.Print();
+            }
+        }
+
+        private void PrintPageHandler(object sender, PrintPageEventArgs e)
+        {
+            // Set up the font and margins
+            Font font = new Font("Arial", 10);
+            Font headerFont = new Font("Arial", 10, FontStyle.Bold);
+            Font titleFont = new Font("Arial", 14, FontStyle.Bold);
+
+            float lineHeight = font.GetHeight(e.Graphics);
+            float x = e.MarginBounds.Left;
+            float y = e.MarginBounds.Top;
+
+            // Calculate column widths (do this once at the start)
+            List<float> columnWidths = new List<float>();
+            List<string> columnHeaders = new List<string>();
+
+            foreach (DataGridViewColumn col in dvgProduit.Columns)
+            {
+                if (col.Visible)
+                {
+                    columnWidths.Add(col.Width * 0.75f);
+                    columnHeaders.Add(col.HeaderText);
+                }
+            }
+
+            // Print title
+            e.Graphics.DrawString("Liste des Produits", titleFont, Brushes.Black,
+                                 e.MarginBounds.Left + (e.MarginBounds.Width - e.Graphics.MeasureString("Liste des Produits", titleFont).Width) / 2,
+                                 y);
+            y += lineHeight * 2;
+
+            // Print column headers
+            x = e.MarginBounds.Left;
+            for (int i = 0; i < columnHeaders.Count; i++)
+            {
+                e.Graphics.DrawString(columnHeaders[i], headerFont, Brushes.Black, x, y);
+                x += columnWidths[i];
+            }
+            y += lineHeight;
+
+            // Print horizontal line below headers
+            e.Graphics.DrawLine(Pens.Black, e.MarginBounds.Left, y, e.MarginBounds.Right, y);
+            y += lineHeight / 2;
+
+            // Print each row
+            foreach (DataGridViewRow row in dvgProduit.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    x = e.MarginBounds.Left;
+                    int colIndex = 0;
+
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        if (cell.OwningColumn.Visible)
+                        {
+                            string cellValue = cell.Value?.ToString() ?? "";
+                            e.Graphics.DrawString(cellValue, font, Brushes.Black, x, y);
+                            x += columnWidths[colIndex];
+                            colIndex++;
+                        }
+                    }
+
+                    y += lineHeight;
+
+                    // Check if we need more pages
+                    if (y + lineHeight > e.MarginBounds.Bottom)
+                    {
+                        e.HasMorePages = true;
+                        return;
+                    }
+                }
+            }
+
+            e.HasMorePages = false;
         }
     }
 }

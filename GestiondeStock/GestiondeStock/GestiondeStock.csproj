@@ -337,6 +337,7 @@
       <DependentUpon>Dbstock.edmx</DependentUpon>
       <LastGenOutput>Dbstock.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\alert-stamp-3.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -98,6 +98,7 @@
             this.btnimprimertout.TabIndex = 21;
             this.btnimprimertout.Text = "Imprimer toutes";
             this.btnimprimertout.UseVisualStyleBackColor = false;
+            this.btnimprimertout.Click += new System.EventHandler(this.btnimprimertout_Click);
             // 
             // btnafficherphoto
             // 

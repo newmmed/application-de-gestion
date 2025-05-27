@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pnlafficher));
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnlaficher = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.pnlaficher = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnclient = new System.Windows.Forms.Button();
             this.btncommande = new System.Windows.Forms.Button();
@@ -66,13 +66,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_1);
             // 
-            // pnlaficher
-            // 
-            resources.ApplyResources(this.pnlaficher, "pnlaficher");
-            this.pnlaficher.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlaficher.Name = "pnlaficher";
-            this.pnlaficher.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlaficher_Paint);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -83,11 +76,19 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // pnlaficher
+            // 
+            resources.ApplyResources(this.pnlaficher, "pnlaficher");
+            this.pnlaficher.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlaficher.Name = "pnlaficher";
+            this.pnlaficher.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlaficher_Paint);
+            // 
             // pictureBox1
             // 
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnclient
             // 

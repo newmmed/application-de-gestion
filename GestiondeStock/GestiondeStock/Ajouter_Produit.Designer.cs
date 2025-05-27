@@ -333,6 +333,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ajouter_Produit";
             this.Text = ", ";
+            this.Load += new System.EventHandler(this.Ajouter_Produit_Load_1);
             this.Enter += new System.EventHandler(this.txtNomP_Entrer);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

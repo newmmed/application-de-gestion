@@ -100,7 +100,7 @@ namespace GestiondeStock
             {
                 int idClient = int.Parse(txtNumm.Text);
                 DateTime dateArrivee = dateTimePicker1.Value.Date;
-                DateTime dateExpiration = dateTimePicker2.Value.Date;
+               
                 DateTime dateCommande = DateTime.Now;  // Ajouter la date de commande (date actuelle)
 
                 string connectionString = "Server=DESKTOP-HBV0SC5\\GSTR2_SERVER;Database=gestion_de_stock;Integrated Security=True;";
@@ -109,15 +109,14 @@ namespace GestiondeStock
                     cnx.Open();
 
                     string sql = @"
-                INSERT INTO Commande (ID_Client, [Date d_arrivee], [date_expiration], date_Commande) 
-                VALUES (@ID_Client, @DateArrivee, @DateExpiration, @DateCommande); 
+                INSERT INTO Commande (ID_Client, [Date d_arrivee], date_Commande) 
+                VALUES (@ID_Client, @DateArrivee,  @DateCommande); 
                 SELECT SCOPE_IDENTITY();";
 
                     using (SqlCommand cmd = new SqlCommand(sql, cnx))
                     {
                         cmd.Parameters.AddWithValue("@ID_Client", idClient);
-                        cmd.Parameters.AddWithValue("@DateArrivee", dateArrivee);
-                        cmd.Parameters.AddWithValue("@DateExpiration", dateExpiration);
+                        cmd.Parameters.AddWithValue("@DateArrivee", dateArrivee);                    
                         cmd.Parameters.AddWithValue("@DateCommande", dateCommande);
 
                         decimal newId = (decimal)cmd.ExecuteScalar();
@@ -128,7 +127,7 @@ namespace GestiondeStock
                         txtNumm.Text = "ID Client";
                         txtNumm.ForeColor = Color.Gray;
                         dateTimePicker1.Value = DateTime.Today;
-                        dateTimePicker2.Value = DateTime.Today.AddDays(1);
+                       
                     }
                 }
             }

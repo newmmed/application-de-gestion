@@ -30,10 +30,8 @@
         {
             System.Windows.Forms.Button btndéconnecter;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_List_Acc));
-            System.Windows.Forms.Button btnConnecter;
             this.btnparamettre = new System.Windows.Forms.Button();
             btndéconnecter = new System.Windows.Forms.Button();
-            btnConnecter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btndéconnecter
@@ -44,28 +42,13 @@
             btndéconnecter.Image = ((System.Drawing.Image)(resources.GetObject("btndéconnecter.Image")));
             btndéconnecter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             btndéconnecter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            btndéconnecter.Location = new System.Drawing.Point(570, 74);
+            btndéconnecter.Location = new System.Drawing.Point(941, 13);
             btndéconnecter.Name = "btndéconnecter";
-            btndéconnecter.Size = new System.Drawing.Size(142, 36);
+            btndéconnecter.Size = new System.Drawing.Size(136, 37);
             btndéconnecter.TabIndex = 3;
             btndéconnecter.Text = "Déconnecter";
             btndéconnecter.UseVisualStyleBackColor = false;
-            // 
-            // btnConnecter
-            // 
-            btnConnecter.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            btnConnecter.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
-            btnConnecter.Font = new System.Drawing.Font("Corbel", 11.25F);
-            btnConnecter.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            btnConnecter.Image = global::GestiondeStock.Properties.Resources.login_32;
-            btnConnecter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnConnecter.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            btnConnecter.Location = new System.Drawing.Point(570, 23);
-            btnConnecter.Name = "btnConnecter";
-            btnConnecter.Size = new System.Drawing.Size(142, 34);
-            btnConnecter.TabIndex = 2;
-            btnConnecter.Text = "Connecter";
-            btnConnecter.UseVisualStyleBackColor = false;
+            btndéconnecter.Click += new System.EventHandler(this.btndéconnecter_Click);
             // 
             // btnparamettre
             // 
@@ -86,7 +69,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(119)))), ((int)(((byte)(78)))));
             this.Controls.Add(this.btnparamettre);
             this.Controls.Add(btndéconnecter);
-            this.Controls.Add(btnConnecter);
             this.Name = "User_List_Acc";
             this.Size = new System.Drawing.Size(1137, 720);
             this.Load += new System.EventHandler(this.User_List_Acc_Load);
